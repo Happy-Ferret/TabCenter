@@ -1129,7 +1129,11 @@ VerticalTabs.prototype = {
     if (this.window.document.getElementById('verticaltabs-box').getAttribute('expanded') === 'true' || this.document.getElementById('main-window').getAttribute('tabspinned') === '') {
       for (let i = 0; i < tabs.childNodes.length; i++) {
         tabs.childNodes[i].setAttribute('crop', 'end');
+        tabs.classList.add('large-tabs');
       }
+    }
+      else if(this.window.document.getElementById('verticaltabs-box').getAttribute('expanded') !== 'true') {
+      tabs.classList.remove('large-tabs');
     } else {
       for (let i = 0; i < tabs.childNodes.length; i++) {
         tabs.childNodes[i].removeAttribute('crop');
